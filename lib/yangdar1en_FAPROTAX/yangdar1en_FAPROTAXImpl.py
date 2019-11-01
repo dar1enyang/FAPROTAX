@@ -62,8 +62,8 @@ class yangdar1en_FAPROTAX:
             #                        '-o', '../installed_clients/FAPROTAX/test_result.biom', '-g', '../installed_clients/FAPROTAX/FAPROTAX.txt', '-v'], shell=True)
             resp = subprocess.check_call(['python', '../installed_clients/FAPROTAX/collapse_table.py', '-i', '../installed_clients/FAPROTAX/phyloseq_test.biom',
                                           '-o', self.shared_folder + '/test_result.biom', '-g', '../installed_clients/FAPROTAX/FAPROTAX.txt', '-v'], shell=True)
-            print("No is: %d" % resp)
-            if resp != 200:
+            # print("No is: %d" % resp)
+            if resp != 0:
                 raise RuntimeError("didn't work good")
             # subprocess.check_call("exit 1", shell=True)
         except subprocess.CalledProcessError as error:
